@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Neme:</strong>
+  <%= @idea.neme %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <% if @idea.picture.present? %>
+    <%= image_tag(@idea.picture_url)  %>
+  <% else %>
+    画像がありません
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
